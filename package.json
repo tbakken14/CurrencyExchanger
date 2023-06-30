@@ -1,5 +1,5 @@
 {
-  "name": "template",
+  "name": "currency_exchange",
   "version": "1.0.0",
   "description": "node version v18.16.0\r npm version 9.5.1",
   "main": "index.js",
@@ -29,10 +29,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tbakken14/Template.git"
+    "url": "git+https://github.com/tbakken14/CurrencyExchanger.git"
   },
   "bugs": {
-    "url": "https://github.com/tbakken14/Template/issues"
+    "url": "https://github.com/tbakken14/CurrencyExchanger/issues"
   },
-  "homepage": "https://github.com/tbakken14/Template#readme"
+  "homepage": "https://github.com/tbakken14/CurrencyExchanger#readme"
 }
