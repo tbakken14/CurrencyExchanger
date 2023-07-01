@@ -19,20 +19,20 @@ _The user inputs a US dollar amount and a target currency. When the form is subm
 ## Setup/Installation Requirements
 
 * _Node Setup_
- * _Download and install Node.js_
- * _Verify compatibility with node version v18.16.0 and npm version 9.5.1_
+  * _Download and install Node.js_
+  * _Verify compatibility with node version v18.16.0 and npm version 9.5.1_
 * _Get API key_
- * _Go to https://www.exchangerate-api.com/_
- * _Create an account_
- * _Copy you API key_
+  * _Go to https://www.exchangerate-api.com/_
+  * _Create an account_
+  * _Copy you API key_
 * _Initialize Environment_
- * _Navigate to root project directory_
- * _Create file ".env"_
-  * _Add line: API\_KEY={YOUR\_API\_KEY}_
+  * _Navigate to root project directory_
+  * _Create file ".env"_
+    * _Add line: API\_KEY={YOUR\_API\_KEY}_
  * _Bash command lines:_
-  * _npm init_
-  * _npm install_
-  * _npm run start_
+   * _npm init_
+   * _npm install_
+   * _npm run start_
 
 ## Known Bugs
 
