@@ -26,8 +26,15 @@ function displayError(errorMessage) {
     p.append(errorMessage);
 }
 
+function handleSubmit(event) {
+    event.preventDefault();
+    let usdAmount = document.querySelector("form > input").value;
+    let currencyCode = document.querySelector("form > select").value;
+    console.log(usdAmount, currencyCode);
+}
+
 function validateDollarInput(dollarInput) {
-    dollarInput.value = /^\$?([1-9]\d*|0|)((?=\.)\.\d{0,2}|)$/.test(dollarInput.value) ?
+    dollarInput.value = /^([1-9]\d*|0|)((?=\.)\.\d{0,2}|)$/.test(dollarInput.value) ?
         dollarInput.value : dollarInput.previousValue;
     dollarInput.previousValue = dollarInput.value;
 }
@@ -37,3 +44,12 @@ function addDollarInputEventListener() {
     dollarInput.previousValue = dollarInput.value;
     dollarInput.addEventListener("input", () => validateDollarInput(dollarInput));
 }
+
+function addFormSubmitEventListener() {
+    let form = document.querySelector("form");
+    form.addEventListener("submit", handleSubmit);
+}
+
+addFormSubmitEventListener();
+addDollarInputEventListener();
+addCodes();
