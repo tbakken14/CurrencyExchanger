@@ -18,3 +18,15 @@ function addCurrencyOptions(currencyCodes) {
         option.append(currencyCode[1]);
     }
 }
+
+function validateDollarInput(dollarInput) {
+    dollarInput.value = /^\$?([1-9]\d*|0|)((?=\.)\.\d{0,2}|)$/.test(dollarInput.value) ?
+        dollarInput.value : dollarInput.previousValue;
+    dollarInput.previousValue = dollarInput.value;
+}
+
+function addEventListeners() {
+    let dollarInput = document.getElementById("dollarInput");
+    dollarInput.previousValue = dollarInput.value;
+    dollarInput.addEventListener("input", () => validateDollarInput(dollarInput));
+}
