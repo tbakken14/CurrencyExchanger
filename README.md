@@ -1,47 +1,46 @@
-# _Template Node_
+# _Currency Exchange_
 
-node version v18.16.0
-npm version 9.5.1
+#### By _**Thomas Bakken**_
 
-Bash Command Line:
-1. npm init
-2. npm install
-
-
-# _{Application Name}_
-
-#### By _**{List of contributors}**_
-
-#### _{Brief description of application}_
+#### _A web application that converts currency using APIs._
 
 ## Technologies Used
 
-* _List all_
-* _the major technologies_
-* _you used in your project_
-* _here_
+* _Node.js_
+* _RESTful APIs_
+* _Javascript_
+* _HTML_
+* _CSS_
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_The user inputs a US dollar amount and a target currency. When the form is submitted, the currency conversion or an error message is displayed._
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this application depends on? We recommend deleting the project from your desktop, re-cloning the project from GitHub, and writing down all the steps necessary to get the project working again.}_
+* _Node Setup_
+ * _Download and install Node.js_
+ * _Verify compatibility with node version v18.16.0 and npm version 9.5.1_
+* _Get API key_
+ * _Go to https://www.exchangerate-api.com/_
+ * _Create an account_
+ * _Copy you API key_
+* _Initialize Environment_
+ * _Navigate to root project directory_
+ * _Create file ".env"_
+  * _Add line: API\_KEY={YOUR\_API\_KEY}_
+ * _Bash command lines:_
+  * _npm init_
+  * _npm install_
+  * _npm run start_
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* _UI needs updating_
+* _Loading of supported codes is slow_
 
 ## License
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_MIT_
 
-Copyright (c) _date_ _author name(s)_
+Copyright (c) _7/1/23_ _Thomas Bakken_
