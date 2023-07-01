@@ -38,7 +38,7 @@ function handleSubmit(event) {
     event.preventDefault();
     let usdAmount = document.querySelector("form > input").value;
     let currencyCode = document.querySelector("form > select").value;
-    CurrencyExchangeService.getConversion("xxx", usdAmount).then(
+    CurrencyExchangeService.getConversion(currencyCode, usdAmount).then(
         (result) => displayResult(result.conversion_result),
         (reason) => { throw new Error(reason); })
         .catch((error) => displayError(error));

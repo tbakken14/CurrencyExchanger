@@ -1,5 +1,7 @@
 body {
+    padding: 10%;
     background-color: blanchedalmond;
+    text-align: center;
 }
 
 select:invalid {
@@ -8,4 +10,22 @@ select:invalid {
 
 select option {
     color: black;
+}
+
+a {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+form {
+    background-color: white;
+    width: 25%;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+select {
+    width: 242px;
 }
