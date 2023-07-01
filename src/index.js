@@ -21,25 +21,37 @@ function addCurrencyOptions(currencyCodes) {
 }
 
 function displayError(errorMessage) {
-    let body = document.querySelector("body");
+    let errorDiv = document.getElementById("error");
+    let resultDiv = document.getElementById("result");
+    hideAndShow(resultDiv, errorDiv);
+    errorDiv.textContent = "";
     let p = document.createElement("p");
-    body.appendChild(p);
+    errorDiv.appendChild(p);
     p.append(errorMessage);
 }
 
-function displayResult(conversionResult) {
-    let body = document.querySelector("body");
+function displayResult(currency, conversionResult) {
+    let resultDiv = document.getElementById("result");
+    let errorDiv = document.getElementById("error");
+    hideAndShow(errorDiv, resultDiv);
+    resultDiv.textContent = "";
     let p = document.createElement("p");
-    body.appendChild(p);
-    p.append(conversionResult);
+    resultDiv.appendChild(p);
+    p.append(`${conversionResult.toFixed(2)} ${currency}(s)`);
+}
+
+function hideAndShow(toHide, toShow) {
+    toHide.setAttribute("class", "hidden");
+    toShow.setAttribute("class", "");
 }
 
 function handleSubmit(event) {
     event.preventDefault();
     let usdAmount = document.querySelector("form > input").value;
     let currencyCode = document.querySelector("form > select").value;
+    let currency = document.querySelector("form > select > option:checked").innerText;
     CurrencyExchangeService.getConversion(currencyCode, usdAmount).then(
-        (result) => displayResult(result.conversion_result),
+        (result) => displayResult(currency, result.conversion_result),
         (reason) => { throw new Error(reason); })
         .catch((error) => displayError(error));
 }

@@ -16,6 +16,7 @@ a {
     position: fixed;
     bottom: 0;
     right: 0;
+    padding: 10px;
 }
 
 form {
@@ -28,4 +29,8 @@ form {
 
 select {
     width: 242px;
+}
+
+.hidden {
+    display: none;
 }
