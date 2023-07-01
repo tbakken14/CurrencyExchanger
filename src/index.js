@@ -2,9 +2,10 @@ import CurrencyExchangeService from './exchangeRate';
 import './css/styles.css';
 
 function addCodes() {
-    CurrencyExchangeService.getCodes().then((data) => {
-        addCurrencyOptions(data.supported_codes);
-    }).catch((errorMessage) => displayError(errorMessage));
+    CurrencyExchangeService.getCodes().then(
+        (data) => addCurrencyOptions(data.supported_codes),
+        (reason) => { throw new Error(reason); }).
+        catch((errorMessage) => displayError(errorMessage));
 }
 
 function addCurrencyOptions(currencyCodes) {
@@ -26,11 +27,21 @@ function displayError(errorMessage) {
     p.append(errorMessage);
 }
 
+function displayResult(conversionResult) {
+    let body = document.querySelector("body");
+    let p = document.createElement("p");
+    body.appendChild(p);
+    p.append(conversionResult);
+}
+
 function handleSubmit(event) {
     event.preventDefault();
     let usdAmount = document.querySelector("form > input").value;
     let currencyCode = document.querySelector("form > select").value;
-    console.log(usdAmount, currencyCode);
+    CurrencyExchangeService.getConversion("xxx", usdAmount).then(
+        (result) => displayResult(result.conversion_result),
+        (reason) => { throw new Error(reason); })
+        .catch((error) => displayError(error));
 }
 
 function validateDollarInput(dollarInput) {
